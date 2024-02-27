@@ -4,14 +4,14 @@ USE `incentive_management`;
 
 CREATE TABLE customers (
     `id` BIGINT(20) AUTO_INCREMENT,
-    `name` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     `mobile` BIGINT(10) UNIQUE NOT NULL,
     PRIMARY KEY (`id`)
 );
 
 CREATE TABLE employees(
     `id` BIGINT(20) AUTO_INCREMENT,
-    `name` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     `email` VARCHAR(40) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
     `salary` INT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE employees(
 
 CREATE TABLE holiday_packages(
     `id` BIGINT(20) AUTO_INCREMENT,
-    `name` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     `duration` INT NOT NULL,
     `destination` VARCHAR(255) NOT NULL,
     `location` VARCHAR(255) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE holiday_packages(
 
 CREATE TABLE amenities(
     `id` BIGINT(20) AUTO_INCREMENT,
-    `name` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     `holidayPackageId` BIGINT(20),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`holidayPackageId`) REFERENCES `holiday_packages`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -52,7 +52,7 @@ CREATE TABLE incentives(
 
 CREATE TABLE products(
     `id` BIGINT(20) AUTO_INCREMENT,
-    `name` VARCHAR(20) NOT NULL,
+    `name` VARCHAR(50) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
